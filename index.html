@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Music Theory Drills</title>
+<meta name="description" content="Interactive practice for chord qualities, Roman numerals and non-chord tones.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: a short title block, then a single column of drill links ordered from first skill to most advanced. */
+  :root {
+    --bg: #eef1f4;
+    --paper: #fbfcfd;
+    --ink: #1b2330;
+    --muted: #5d6878;
+    --rule: #d3d9e1;
+    --accent: #2f4a8a;
+    --font-display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+    --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12161d; --paper: #1b212b; --ink: #e4e9f0; --muted: #98a3b3;
+      --rule: #2e3644; --accent: #8fa8e8;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12161d; --paper: #1b212b; --ink: #e4e9f0; --muted: #98a3b3;
+    --rule: #2e3644; --accent: #8fa8e8;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.55;
+    padding-block: 3rem 4rem;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  main { max-width: 38rem; margin: 0 auto; display: grid; gap: 2rem; }
+  .eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 0 0 0.5rem; }
+  h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 8vw, 3.2rem); line-height: 1.05; margin: 0; text-wrap: balance; }
+  .intro { margin: 0.9rem 0 0; color: var(--muted); max-width: 32rem; }
+
+  ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+  .drill {
+    display: grid;
+    grid-template-columns: 3.25rem 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.1rem 1.25rem;
+    background: var(--paper);
+    border: 1.5px solid var(--rule);
+    border-radius: 6px;
+    color: inherit;
+    text-decoration: none;
+  }
+  .drill:hover { border-color: var(--accent); }
+  .drill:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 45%, transparent); outline-offset: 2px; }
+  .glyph { font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; color: var(--accent); text-align: center; line-height: 1; }
+  .glyph sup { font-family: var(--font-body); font-size: 0.5em; }
+  .text { min-width: 0; }
+  .drill h2 { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; margin: 0; line-height: 1.2; }
+  .drill p { margin: 0.25rem 0 0; color: var(--muted); font-size: 0.92rem; }
+  .arrow { color: var(--accent); font-size: 1.25rem; }
+  footer { color: var(--muted); font-size: 0.8rem; }
+  footer code { font-family: var(--font-mono); font-size: 0.95em; }
+
+  @media (max-width: 30rem) {
+    .drill { grid-template-columns: 2.5rem 1fr; }
+    .arrow { display: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">Practice tools</p>
+    <h1>Music Theory Drills</h1>
+    <p class="intro">Interactive exercises with a new example every time. Each one runs in your browser, with nothing to install or sign in to.</p>
+  </header>
+
+  <ol>
+    <li>
+      <a class="drill" href="/chord-quality-drill/">
+        <span class="glyph" aria-hidden="true">ø<sup>7</sup></span>
+        <div class="text">
+          <h2>Chord Quality Drill</h2>
+          <p>Name the quality of a four-voice triad or seventh chord, written without a key signature.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+    <li>
+      <a class="drill" href="/roman-numeral-drill/">
+        <span class="glyph" aria-hidden="true">V<sup>7</sup></span>
+        <div class="text">
+          <h2>Roman Numeral Drill</h2>
+          <p>Identify the key and the Roman numeral with its figure for a chord in four voices.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+    <li>
+      <a class="drill" href="/non-chord-tone-drill/">
+        <span class="glyph" aria-hidden="true">NT</span>
+        <div class="text">
+          <h2>Non-Chord Tone Drill</h2>
+          <p>Find the non-chord tones in a melody over three chords and name each one.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+  </ol>
+
+  <footer>Notation is drawn with VexFlow.</footer>
+</main>
+</body>
+</html>
